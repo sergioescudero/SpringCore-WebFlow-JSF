@@ -4,7 +4,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import concierto.excepciones.SinsonidoException;
-import concierto.musicos.Solista;
+import concierto.interfaces.Musico;
 
 
 public class ConciertoSolistaInjectionAppContext {
@@ -14,8 +14,8 @@ public class ConciertoSolistaInjectionAppContext {
 	 */
 	public static void main(String[] args) {
 		
-		ApplicationContext factoria = new ClassPathXmlApplicationContext("application-context_08.xml");
-		Solista solista = (Solista) factoria.getBean("solista");
+		ApplicationContext factoria = new ClassPathXmlApplicationContext("application-context.xml");
+		Musico solista = (Musico) factoria.getBean("solista");
 		
 		try {
 			solista.tocar();
