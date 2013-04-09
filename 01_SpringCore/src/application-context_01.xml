@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- <bean id="guitarra" class="concierto.instrumentos.Guitarra" p:sonido="tra tra tra">
+		<property name="sonido" value="tra, tra, tra"></property>
+	</bean> -->
+	
+	<bean id="guitarra" class="concierto.instrumentos.Guitarra" p:sonido="#{sonido.sonidoGuitarra}"></bean>
+	
+	<bean id="tambor" class="concierto.instrumentos.Tambor">
+		<property name="sonido" value="pom, pom, pom"></property>
+	</bean>	
+	
+	<bean id="trompeta" class="concierto.instrumentos.Trompeta">
+		<property name="sonido" value="tu, tu, tu"></property>
+	</bean>		
+	
+	<bean id="solista" class="concierto.musicos.Solista">
+		<property name="instrumento" ref="guitarra"></property>
+	</bean>
+	
+	<bean id="sonido" class="concierto.instrumentos.Sonidos" p:sonidoGuitarra="tra tra tra"></bean>
+	
+	<bean id="hombreOrquesta">
+		<property name="instrumento"></property>
+	</bean>
+	
+</beans>

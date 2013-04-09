@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd">
+	
+	
+	<bean id="sonido" class="concierto.instrumentos.Sonidos" p:sonidoGuitarra="tra tra tra" p:sonidoTambor="pom, pom, pom" p:sonidoTrompeta="tu, tu, tu"></bean>
+	
+	<util:list id="instrumentos">
+		<bean id="tambor" class="concierto.instrumentos.Tambor" p:sonido="#{sonido.sonidoTambor}" p:precio="500"></bean>
+		<bean id="trompeta" class="concierto.instrumentos.Trompeta" p:sonido="#{sonido.sonidoTrompeta}" p:precio="200"></bean>
+		<bean id="guitarra" class="concierto.instrumentos.Guitarra" p:sonido="#{sonido.sonidoGuitarra}" p:precio="3000"></bean>	
+	</util:list>
+	
+	
+	<bean id="hombreOrquesta" class="concierto.musicos.HombreOrquesta" p:instrumentos="#{instrumentos.?[precio lt 1000]}">
+	</bean>
+	
+</beans>
