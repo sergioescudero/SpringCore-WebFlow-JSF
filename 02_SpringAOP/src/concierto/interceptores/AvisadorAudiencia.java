@@ -20,4 +20,8 @@ public class AvisadorAudiencia {
 		System.out.println("plas plas plas");
 	}
 	
+	public void averia(){
+		System.out.println("averiado");
+	}
+	
 }

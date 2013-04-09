@@ -7,7 +7,7 @@ import concierto.interfaces.Instrumento;
 
 public class Tambor implements Instrumento {
 	
-	@Value ("kakakakakaka")
+	//@Value ("kakakakakaka")
 	private String sonido;
 	private Integer precio;
 	

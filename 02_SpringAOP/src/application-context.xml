@@ -17,6 +17,7 @@
 		<aop:aspect ref="AvisadorAudiencia">
 			<aop:before method="sentarse" pointcut="execution(* concierto.interfaces.Musico.tocar(..))"></aop:before>
 			<aop:before method="apagarMoviles" pointcut="execution(* concierto.interfaces.Musico.tocar(..))"></aop:before>
+			<aop:after-throwing method="averia" pointcut="execution(* concierto.interfaces.Musico.tocar(..))"></aop:after-throwing>
 			<aop:after method="encenderMoviles" pointcut="execution(* concierto.interfaces.Musico.tocar(..))"></aop:after>
 			<aop:after method="aplaudir" pointcut="execution(* concierto.interfaces.Musico.tocar(..))"></aop:after>
 		</aop:aspect>
