@@ -1,10 +1,15 @@
 package test;
 
+import java.util.List;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-public class Test {
+import com.mapper.MapaPersonas;
+import com.model.Persona;
+
+public class TestLeerDatos {
 
 	/**
 	 * @param args
@@ -14,9 +19,11 @@ public class Test {
 		
 		JdbcTemplate plantilla = (JdbcTemplate) factoria.getBean("plantilla");
 		
-		String insert = "insert into personas (nombre, direccion, telefono, edad) values (?,?,?,?)";
-				
-		plantilla.update(insert, "Probatina", "Rue del Percebe 44", "98989898", "99");
+		
+		List<Persona> personas = plantilla.query("select * from personas", new MapaPersonas());
+		for (Persona persona:personas){
+			System.out.println(persona.getNombre());
+		}
 		
 		((ClassPathXmlApplicationContext) factoria).close(); 
 	}
