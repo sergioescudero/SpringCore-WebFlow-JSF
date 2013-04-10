@@ -26,12 +26,7 @@
 	</aop:config>
 	-->
 	
-	<!-- paquete a partir del cual -->
-	<context:component-scan base-package="concierto"></context:component-scan>
 	
-	
-	
-	<bean id="sonido" class="concierto.instrumentos.Sonidos" p:sonidoGuitarra="tra tra tra" p:sonidoTambor="pom, pom, pom" p:sonidoTrompeta="tu, tu, tu"></bean>
 	
 	
 	<bean id="solista" class="concierto.musicos.Solista" autowire="constructor">

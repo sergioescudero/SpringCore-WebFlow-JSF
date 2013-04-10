@@ -8,7 +8,7 @@ import org.aspectj.lang.annotation.Pointcut;
 @Aspect
 public class AvisadorAudiencia {
 	
-	@Pointcut("execution(*concierto.interfaces.Musico.tocar(..))")
+	@Pointcut("execution(* concierto.interfaces.Musico.tocar(..))")
 	public void ejecucion(){
 		System.out.println("Método ejecución");
 	}

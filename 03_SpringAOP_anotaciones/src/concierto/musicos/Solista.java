@@ -1,9 +1,5 @@
 package concierto.musicos;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Component;
-
 import concierto.excepciones.SinsonidoException;
 import concierto.interfaces.Instrumento;
 import concierto.interfaces.Musico;
