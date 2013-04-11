@@ -2,14 +2,17 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:p="http://www.springframework.org/schema/p"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+	
+	<context:annotation-config />
 
 <!-- INITIAL - INICIO-->
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"></property>
 		<property name="prefix" value="/pages/"></property>
-		<property name="suffix" value=".html"></property>
+		<property name="suffix" value=".jsp"></property>
 	</bean>
 <!-- INITIAL - FIN-->
 
@@ -24,5 +27,7 @@
 	<bean id="plantilla" class="org.springframework.jdbc.core.JdbcTemplate" p:dataSource-ref="dataSource"></bean>
 <!-- JDBC - FIN -->
 
-	<bean id="/login.xhtml" class="com.controladores.PrimerControlador" p:plantilla-ref="plantilla"></bean>
+	<bean id="/*.xhtml" class="com.controladores.SegundoControlador"></bean>
+					
+	
 </beans>
