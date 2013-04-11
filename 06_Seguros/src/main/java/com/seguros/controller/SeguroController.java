@@ -13,10 +13,10 @@ public class SeguroController {
 	@RequestMapping ("/initSeguroPersona.xhtml")
 	public ModelAndView iniciarPersona (Model model){
 		Persona persona = new Persona();
-		
+		persona.setNombre(nombre)
 		
 		model.addAttribute(persona);
 		
-		return new ModelAndView("formulario");
+		return new ModelAndView("persona");
 	}
 }
