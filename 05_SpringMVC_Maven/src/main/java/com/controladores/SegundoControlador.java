@@ -22,7 +22,7 @@ public class SegundoControlador {
 	@Autowired //quito la propiedad de la def del bean de SegundoControlador
 	private JdbcTemplate plantilla;
 	
-	@RequestMapping ("/login.xhtml")
+	/*@RequestMapping ("/login.xhtml")
 	public ModelAndView login(HttpServletRequest request, HttpServletResponse response){
 	
 	
@@ -34,18 +34,33 @@ public class SegundoControlador {
 		}
 		
 		return new ModelAndView("ok");
+	}*/
+	
+	@RequestMapping ("/login.xhtml")
+	public ModelAndView login (Model model){
+		Login login = new Login();
+		login.setUsuario("Introduzca el usuario");
+		login.setClave("Introduzca la clave");
+		
+		model.addAttribute(login);
+		
+		return new ModelAndView("formulario");
 	}
 	
-	@RequestMapping ("/ciudades.xhtml")
-	public ModelAndView login (Model model){
-		List<String> ciudades = new ArrayList<String>();
+	@RequestMapping ("/verifica.xhtml")
+	public ModelAndView verifica (Login login){
+		String clave = login.getClave();
+		String usuario = login.getUsuario();
 		
-		ciudades.add("Madrid");
-		ciudades.add("Logroño");
+				
+		String sql = "select * from usuarios where usuario = ? and clave = ?";
+		List<Login> lista = getPlantilla().query(sql,  new Object[]{usuario,clave},new MapaLogin());
 		
-		model.addAttribute("ciudades",ciudades);
+		if (lista==null || lista.isEmpty()){
+			return new ModelAndView("ko");
+		}
 		
-		return new ModelAndView("ejemplo");
+		return new ModelAndView("ok");
 	}
 	
 	
