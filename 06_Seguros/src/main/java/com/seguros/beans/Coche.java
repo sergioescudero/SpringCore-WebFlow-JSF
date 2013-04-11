@@ -2,7 +2,7 @@ package com.seguros.beans;
 
 public class Coche {
 	private int id;
-	private String Marca;
+	private String marca;
 	private String modelo;
 	private int cilindrada;
 	private int antiguedad;
@@ -15,10 +15,10 @@ public class Coche {
 		this.id = id;
 	}
 	public String getMarca() {
-		return Marca;
+		return marca;
 	}
 	public void setMarca(String marca) {
-		Marca = marca;
+		marca = marca;
 	}
 	public String getModelo() {
 		return modelo;
