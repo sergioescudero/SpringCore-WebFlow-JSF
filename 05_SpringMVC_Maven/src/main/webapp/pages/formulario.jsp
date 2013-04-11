@@ -1,19 +1,19 @@
-
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="sf"%>
 <html>
 <head>
 <title> </title>
 </head>
 <body>
 Los datos a introducir:
-	<form action="verifica.xhtml">
-		Username: <input type="text" name="login.usuario" value="${login.usuario}"/><br/>
-		Password: <input type="text" name="login.clave"             value="${login.clave}"/><br/>
+	<sf:form action="verifica.xhtml" modelAttribute="login">
+		Username: <sf:input path="usuario"/><br/>
+		Password: <sf:input path="clave"/><br/>
 		
 		<input type="submit" value="verificar"></input>
 	
 	
 	
 	
-	</form>
+	</sf:form>
 </body>
 </html>
