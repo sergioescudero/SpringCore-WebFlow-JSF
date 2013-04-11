@@ -16,7 +16,8 @@ Persona
 		Edad: <sf:input path="edad"/><br/>
 		Codigo Postal: <sf:input path="codigoPostal"/><br/>
 		
-		<input type="submit" value="verificar"></input>
+		<input type="submit" value="salir"></input>
+		<input type="submit" value="guardar"></input>
 	
 	
 	
