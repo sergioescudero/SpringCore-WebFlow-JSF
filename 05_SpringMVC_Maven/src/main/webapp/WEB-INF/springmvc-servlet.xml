@@ -8,8 +8,8 @@
 <!-- INITIAL - INICIO-->
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"></property>
-		<property name="prefix" value="/pages"></property>
-		<property name="suffix" value="*.xhtml"></property>
+		<property name="prefix" value="/pages/"></property>
+		<property name="suffix" value=".html"></property>
 	</bean>
 <!-- INITIAL - FIN-->
 
@@ -24,5 +24,5 @@
 	<bean id="plantilla" class="org.springframework.jdbc.core.JdbcTemplate" p:dataSource-ref="dataSource"></bean>
 <!-- JDBC - FIN -->
 
-	<bean id="/login.xhtm" class="com.controladores.PrimerControlador" p:plantilla-ref="plantilla"></bean>
+	<bean id="/login.xhtml" class="com.controladores.PrimerControlador" p:plantilla-ref="plantilla"></bean>
 </beans>
