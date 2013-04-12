@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#login.jsp" PATH="/login.jsp"
+  SHAPE="32,129,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#login.jsp:0" NAME="item" PATH="/login.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="OK::#faces#ok.html" NAME="output"
+    PATH="/faces/ok.html" TARGET="rules:#faces#ok.html" TITLE="OK" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#login.jsp:1" NAME="item1" PATH="/login.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="KO::#faces#ko.html" NAME="output"
+    PATH="/faces/ko.html" TARGET="rules:#faces#ko.html" TITLE="KO" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#faces#ko.html" PATH="/faces/ko.html"
+  SHAPE="256,289,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#faces#ok.html" PATH="/faces/ok.html"
+  SHAPE="256,145,0,0" model-entity="JSFProcessGroup"/>
+</PROCESS>
