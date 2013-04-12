@@ -5,7 +5,7 @@
 </head>
 <body>
 Persona
-	<sf:form action="verifica.xhtml" modelAttribute="login">
+	<sf:form action="introducirPersona.xhtml" modelAttribute="persona">
 	
 	
 		Nombre: <sf:input path="nombre"/><br/>
@@ -15,6 +15,7 @@ Persona
 		Antiguedad: <sf:input path="antiguedad"/><br/>
 		Edad: <sf:input path="edad"/><br/>
 		Codigo Postal: <sf:input path="codigoPostal"/><br/>
+		Poblacion: <sf:input path="poblacion"/>
 		
 		<input type="submit" value="salir"></input>
 		<input type="submit" value="guardar"></input>

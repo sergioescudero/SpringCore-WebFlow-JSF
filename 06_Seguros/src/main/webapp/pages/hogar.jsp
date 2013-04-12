@@ -5,7 +5,7 @@
 </head>
 <body>
 Hogar
-	<sf:form action="verifica.xhtml" modelAttribute="login">
+	<sf:form action="introducirHogar.xhtml" modelAttribute="hogar">
 	
 	
 		calle: <sf:input path="calle"/><br/>
@@ -17,7 +17,8 @@ Hogar
 		hipoteca: <sf:checkbox path="hipoteca"/><br/>
 		alquilado: <sf:checkbox path="alquilado"/><br/>
 		
-		<input type="submit" value="verificar"></input>
+		<input type="submit" value="salir"></input>
+		<input type="submit" value="guardar"></input>
 		
 			
 	

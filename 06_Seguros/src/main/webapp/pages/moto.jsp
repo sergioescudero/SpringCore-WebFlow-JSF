@@ -5,7 +5,7 @@
 </head>
 <body>
 Moto
-	<sf:form action="verifica.xhtml" modelAttribute="login">
+	<sf:form action="introducirMoto.xhtml" modelAttribute="moto">
 	
 	
 		Marca: <sf:input path="marca"/><br/>
@@ -15,7 +15,8 @@ Moto
 		Matricula: <sf:input path="matricula"/><br/>
 		Bastidor: <sf:input path="bastidor"/><br/>
 		
-		<input type="submit" value="verificar"></input>
+		<input type="submit" value="salir"></input>
+		<input type="submit" value="guardar"></input>
 	
 	
 	

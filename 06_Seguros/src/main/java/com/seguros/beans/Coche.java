@@ -18,7 +18,7 @@ public class Coche {
 		return marca;
 	}
 	public void setMarca(String marca) {
-		marca = marca;
+		this.marca = marca;
 	}
 	public String getModelo() {
 		return modelo;
