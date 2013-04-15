@@ -1,8 +1,11 @@
 package com.beans;
 
+import java.util.Date;
+
 public class Login {
 	private String usuario;
 	private String clave;
+	private Date fecha;
 	
 	public String validar(){
 		
@@ -27,6 +30,14 @@ public class Login {
 
 	public void setClave(String clave) {
 		this.clave = clave;
+	}
+
+	public Date getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(Date fecha) {
+		this.fecha = fecha;
 	}
 
 }

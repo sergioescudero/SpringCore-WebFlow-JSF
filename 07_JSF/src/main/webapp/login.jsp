@@ -10,8 +10,18 @@
 <body>
 <f:view>
 	<h:form>
-		<h:inputText value="#{login.usuario}"></h:inputText><BR/>
-		<h:inputSecret value="#{login.clave}"></h:inputSecret><BR/>
+		<h:inputText value="#{login.usuario}" id="usuario">
+			<f:validator validatorId="loginvalidador"/>
+			 
+		</h:inputText><BR/>
+		<h:inputSecret required="true" requiredMessage="La pwd es obligatoria" value="#{login.clave}" id="password"></h:inputSecret><BR/>
+		dd/mm/aaaa<h:inputText value="#{login.fecha}">
+					<f:convertDateTime pattern="dd/MM/yyyy"/>
+					
+				</h:inputText>
+		
+	<h:message for="usuario">metelo bien</h:message>
+	<h:message for="password"/>
 	
 		<h:commandButton value="A autenticarse" action="#{login.validar}"></h:commandButton>
 	</h:form>

@@ -15,11 +15,17 @@
         </managed-property>
  	</managed-bean>
  	
+ 	<validator>
+ 		<validator-id>loginvalidador</validator-id>
+ 		<validator-class>com.validadores.LoginValidator</validator-class>
+ 	</validator>
+ 	
+ 	
  	<navigation-rule>
  		<from-view-id>/login.jsp</from-view-id>
  		<navigation-case>
  			<from-outcome>OK</from-outcome>
- 			<to-view-id>/faces/ok.html</to-view-id>
+ 			<to-view-id>/pages/ok.html</to-view-id>
  		</navigation-case>
  	</navigation-rule>
   
@@ -28,7 +34,7 @@
  		<from-view-id>/login.jsp</from-view-id>
  		<navigation-case>
  			<from-outcome>KO</from-outcome>
- 			<to-view-id>/faces/ko.html</to-view-id>
+ 			<to-view-id>/pages/ko.html</to-view-id>
  		</navigation-case>
  	</navigation-rule>
  
