@@ -18,10 +18,15 @@
 		dd/mm/aaaa<h:inputText value="#{login.fecha}">
 					<f:convertDateTime pattern="dd/MM/yyyy"/>
 					
-				</h:inputText>
+		</h:inputText><BR/>
 		
-	<h:message for="usuario">metelo bien</h:message>
-	<h:message for="password"/>
+		<h:selectOneMenu valueChangeListener="#{login.eventoFechas}" onchange="submit()">
+			<f:selectItems value="#{login.listPaises}"/>
+		</h:selectOneMenu><BR/>
+		<h:outputLabel value="#{login.mes}" /><BR/>
+		
+	<h:message for="usuario">metelo bien</h:message><BR/>
+	<h:message for="password"/><BR/>
 	
 		<h:commandButton value="A autenticarse" action="#{login.validar}"></h:commandButton>
 	</h:form>
