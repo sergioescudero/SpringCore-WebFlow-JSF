@@ -9,10 +9,6 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
 		<param-value>Development</param-value>
 	</context-param>
 
-	<!-- Welcome page -->
-	<welcome-file-list>
-		<welcome-file>login.jsf</welcome-file>
-	</welcome-file-list>
 	
 	
 	<!-- JSF mapping -->
@@ -24,7 +20,10 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
  
 	
 	<!-- Map these files with JSF -->
-	
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>/faces/*</url-pattern>
+	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>Faces Servlet</servlet-name>
 		<url-pattern>*.jsf</url-pattern>

@@ -15,6 +15,15 @@
         </managed-property>
  	</managed-bean>
  	
+ 	
+ 	<managed-bean>
+ 		<managed-bean-name>persona</managed-bean-name>
+ 		<managed-bean-class>com.beans.Persona</managed-bean-class>
+ 		<managed-bean-scope>session</managed-bean-scope>
+ 	</managed-bean>
+ 	
+ 	
+ 	
  	<validator>
  		<validator-id>loginvalidador</validator-id>
  		<validator-class>com.validadores.LoginValidator</validator-class>
@@ -34,7 +43,7 @@
  		<from-view-id>/login.jsp</from-view-id>
  		<navigation-case>
  			<from-outcome>KO</from-outcome>
- 			<to-view-id>/pages/ko.html</to-view-id>
+ 			<to-view-id>pages/ko.html</to-view-id>
  		</navigation-case>
  	</navigation-rule>
  
