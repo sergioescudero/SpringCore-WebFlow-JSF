@@ -11,9 +11,6 @@
 
 
 
-<!-- INITIAL - FIN-->
-<context:annotation-config />
-
 <!-- JDBC - INICIO -->
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
