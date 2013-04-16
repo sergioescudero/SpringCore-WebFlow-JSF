@@ -2,8 +2,13 @@ package com.beans;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ListIterator;
 
 import javax.faces.model.SelectItem;
+
+import org.springframework.jdbc.core.JdbcTemplate;
+
+import com.database.mappers.MapaCarnets;
 
 public class Persona {
 
@@ -18,6 +23,8 @@ public class Persona {
 	private String poblacion;
 	List <TipoCarnet> carnet;
 	private List<SelectItem> listCarnets= new ArrayList<SelectItem>();
+	
+	private JdbcTemplate plantilla;
 	
 	public Integer getId() {
 		return id;
@@ -82,8 +89,42 @@ public class Persona {
 	}
 	
 	
-	public Persona() {
+	public List<SelectItem> obtenerListaCarnets(){
+		List<TipoCarnet> listaTiposCarnets = plantilla.query(
+                "select * from seguros.tipocarnet order by descripcion",
+                new MapaCarnets());
+        ListIterator<TipoCarnet> litr = listaTiposCarnets.listIterator();
+        
+        while (litr.hasNext()) {
+            TipoCarnet element = (TipoCarnet) litr.next();
+            SelectItem tipo1 = new SelectItem();
+            tipo1.setLabel(element.getDescripcion());
+            tipo1.setValue(element.getId());
+            getListCarnets().add(tipo1);
+        }
+        
+        return getListCarnets();
+	}
+	
+	/*public Persona() {
+		ApplicationContext factoria = new ClassPathXmlApplicationContext(
+                "application-context.xml");
+        JdbcTemplate plantilla = (JdbcTemplate) factoria.getBean("plantilla");
 		
+		
+        
+	}*/
+	public List<SelectItem> getListCarnets() {
+		return listCarnets;
+	}
+	public void setListCarnets(List<SelectItem> listCarnets) {
+		this.listCarnets = listCarnets;
+	}
+	public JdbcTemplate getPlantilla() {
+		return plantilla;
+	}
+	public void setPlantilla(JdbcTemplate plantilla) {
+		this.plantilla = plantilla;
 	}
 	
 	

@@ -3,6 +3,10 @@
  xmlns:xi="http://www.w3.org/2001/XInclude"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
  
+<application>
+	<el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver</el-resolver>
+</application>
+ 
  
  	<managed-bean>
  		<managed-bean-name>login</managed-bean-name>
@@ -20,6 +24,11 @@
  		<managed-bean-name>persona</managed-bean-name>
  		<managed-bean-class>com.beans.Persona</managed-bean-class>
  		<managed-bean-scope>session</managed-bean-scope>
+ 		<managed-property>
+			<property-name>plantilla</property-name>
+			<property-class>org.springframework.jdbc.core.JdbcTemplate</property-class>
+			<value>#{plantilla}</value>
+		</managed-property>
  	</managed-bean>
  	
  	

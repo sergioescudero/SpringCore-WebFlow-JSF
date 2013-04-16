@@ -2,24 +2,17 @@ package com.beans;
 
 public class TipoCarnet {
 	private int id;
-	private int idPersona;
-	private int idCarnet;
+	private String descripcion;
+	public String getDescripcion() {
+		return descripcion;
+	}
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
-	}
-	public int getIdPersona() {
-		return idPersona;
-	}
-	public void setIdPersona(int idPersona) {
-		this.idPersona = idPersona;
-	}
-	public int getIdCarnet() {
-		return idCarnet;
-	}
-	public void setIdCarnet(int idCarnet) {
-		this.idCarnet = idCarnet;
 	}
 }
