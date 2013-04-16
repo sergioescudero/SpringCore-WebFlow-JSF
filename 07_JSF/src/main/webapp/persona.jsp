@@ -19,7 +19,7 @@ Persona
 	Poblacion: <h:inputText value="#{persona.poblacion}" id="poblacion" required="true" requiredMessage="La población es obligatoria"/><h:message for="poblacion"/><BR/>
 
  	CARNETS:<h:selectManyListbox size="5" >
-				<f:selectItems value="#{persona.obtenerListaCarnets()}" />
+				<f:selectItems value="#{persona.obtenerListaCarnets()}" id="#{persona.carnet}"/>
 		</h:selectManyListbox>
 		
 		<h:commandButton value="A validar" action="#{persona.validar}"></h:commandButton>
