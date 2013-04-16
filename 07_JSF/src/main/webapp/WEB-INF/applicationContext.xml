@@ -17,4 +17,19 @@
 	
 	<bean id="plantilla" class="org.springframework.jdbc.core.JdbcTemplate" p:dataSource-ref="dataSource"></bean>
 
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="annotatedPackages">
+			<list>
+				<!-- las lista de clases que hemos anotado -->
+				<value>com.seguros.beans</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="dialect">org.hibernate.dialect.MySQLDialect</prop>
+			</props>
+		</property>
+	</bean>
+
 </beans>

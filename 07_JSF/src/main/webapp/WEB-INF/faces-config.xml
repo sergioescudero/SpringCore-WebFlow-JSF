@@ -32,6 +32,16 @@
  	</managed-bean>
  	
  	
+ 	<managed-bean>
+ 		<managed-bean-name>poliza</managed-bean-name>
+ 		<managed-bean-class>com.beans.Poliza</managed-bean-class>
+ 		<managed-bean-scope>session</managed-bean-scope>
+ 		<managed-property>
+			<property-name>sessionFactory</property-name>
+			<value>#{sessionFactory}</value>
+		</managed-property>
+ 	</managed-bean>
+ 	
  	
  	<validator>
  		<validator-id>loginvalidador</validator-id>

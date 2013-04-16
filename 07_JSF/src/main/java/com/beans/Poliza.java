@@ -3,16 +3,24 @@ package com.beans;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.classic.Session;
+
 @Entity
 @Table (name="Poliza")
 public class Poliza {
-	
 	
 	private int id;
 	private Persona persona;
 	private Moto moto;
 	private Coche coche;
 	private Hogar hogar;
+	
+	
+	private SessionFactory sessionFactory;
+	
+	
 	public int getId() {
 		return id;
 	}
@@ -42,5 +50,29 @@ public class Poliza {
 	}
 	public void setHogar(Hogar hogar) {
 		this.hogar = hogar;
+	}
+	public SessionFactory getSessionFactory() {
+		return sessionFactory;
+	}
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+	
+	public void grabarPoliza(){
+		Session session = getSessionFactory().openSession();
+		Transaction transaction = session.beginTransaction();
+		
+		session.saveOrUpdate(persona);
+		session.saveOrUpdate(coche);
+		session.saveOrUpdate(moto);
+		session.saveOrUpdate(hogar);
+		session.saveOrUpdate(poliza);
+		
+		transaction.commit();
+		
+		session.close();
+		
+		
+		
 	}
 }

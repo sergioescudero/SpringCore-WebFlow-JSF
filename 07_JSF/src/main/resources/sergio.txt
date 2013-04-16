@@ -1,0 +1,23 @@
+public String altaPoliza () {
+	//String ret = "ko";
+	FacesContext facesContext = FacesContext.getCurrentInstance();
+	Persona persona = (Persona) facesContext.getApplication().evaluateExpressionGet(facesContext, "#{persona}", Persona.class);
+	Coche coche = (Coche) facesContext.getApplication().evaluateExpressionGet(facesContext, "#{coche}", Coche.class);
+	Moto moto = (Moto) facesContext.getApplication().evaluateExpressionGet(facesContext, "#{moto}", Moto.class);
+	Hogar hogar = (Hogar) facesContext.getApplication().evaluateExpressionGet(facesContext, "#{hogar}", Hogar.class);
+	
+	
+	ApplicationContext factory= new ClassPathXmlApplicationContext("spring.xml");
+	SessionFactory sessionFactory = (SessionFactory) factory.getBean("sessionFactory");
+	Session session = sessionFactory.openSession();
+	Transaction transaction = (Transaction) session.beginTransaction();
+	session.saveOrUpdate(persona);
+	session.saveOrUpdate(coche);
+	session.saveOrUpdate(moto);
+	session.saveOrUpdate(hogar);
+	
+	Poliza  poliza = new Poliza();
+
+
+
+
