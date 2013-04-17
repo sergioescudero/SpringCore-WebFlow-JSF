@@ -15,4 +15,14 @@
   SHAPE="256,145,0,0" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:pages#ko.html" PATH="pages/ko.html"
   SHAPE="256,289,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#persona.jsp" PATH="/persona.jsp"
+  SHAPE="32,273,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#persona.jsp:0" NAME="item"
+   PATH="/persona.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="OK::#pages#coche.jsf" NAME="output"
+    PATH="/pages/coche.jsf" TARGET="rules:#pages#coche.jsf" TITLE="OK" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#coche.jsf" PATH="/pages/coche.jsf"
+  SHAPE="240,401,0,0" model-entity="JSFProcessGroup"/>
 </PROCESS>
