@@ -19,7 +19,7 @@
     <!-- Mapea las peticiones de flujo desde el DispatcherServlet al FlowController y seguimos el flujo de declaracion de la arquitectura -->
     <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
         <property name="mappings">
-            <value>inicio.html=flowController</value> 
+            <value>uno.htm=flowController</value> 
         </property>
         <property name="alwaysUseFullPath" value="true"/>
     </bean>
@@ -36,7 +36,7 @@
  
     <!-- Registramos todos nuestros flujos con la dupla id-xml -->
     <webflow:flow-registry id="flowRegistry" flow-builder-services="flowBuilderServices"> 
-            <webflow:flow-location id="inicio" path="/WEB-INF/flow.xml"/> 
+            <webflow:flow-location id="uno" path="/WEB-INF/flow/flow.xml"/> 
     </webflow:flow-registry>   
     <webflow:flow-builder-services id="flowBuilderServices" 
             view-factory-creator="viewFactoryCreator"></webflow:flow-builder-services>  
