@@ -8,6 +8,10 @@ UNO
 		Password: <sf:input path="clave"/><br/>
 		
 		<sf:button>enviar</sf:button>
+		
+		${persona.nombre}
+		${persona.apellidos}
+		${persona.dni}
 
 </sf:form>
 

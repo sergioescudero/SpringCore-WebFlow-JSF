@@ -4,8 +4,13 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/webflow
         http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
 	
+	
+	<on-start>
+		<evaluate expression="login.getPersona()" result="flowScope.persona"></evaluate>
+	</on-start>
+	
 	<view-state id="uno" view="uno" model="login">
-		<transition on="ok1" to="dos"></transition>
+		<transition on="ok1" to="validarLogin"></transition>
 	</view-state>
 	<view-state id="dos" view="dos">
 		<transition on="ok2" to="tres"></transition>
@@ -13,8 +18,15 @@
 	<view-state id="tres" view="tres">
 		<transition on="ok3" to="fin"></transition>
 	</view-state>
-
-
+	
+	<view-state id="OK" view="ok"/>
+	<view-state id="KO" view="ko"/>
+	
+	<action-state id="validarLogin">
+		<evaluate expression="login.validar()"/>
+			<transition on="OK" to="OK"/>
+			<transition on="KO" to="KO"/>
+	</action-state>
 
 	
 	<end-state id="fin" view="fin">

@@ -26,6 +26,21 @@ public class Login {
 		this.clave = clave;
 	}
 	
+	public String validar(){
+		if (usuario.equalsIgnoreCase(clave)){
+			return "OK";
+		}
+		return "KO";
+	}
 	
+	public Persona getPersona(){
+		Persona persona = new Persona();
+		
+		persona.setNombre("Probatino");
+		persona.setApellidos("De la Fuente");
+		persona.setDni("55888999X");
+		
+		return persona;
+	}
 	
 }
