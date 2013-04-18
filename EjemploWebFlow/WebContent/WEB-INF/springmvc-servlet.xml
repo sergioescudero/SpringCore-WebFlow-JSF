@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:webflow-config="http://www.springframework.org/schema/webflow-config"
+	xsi:schemaLocation="http://www.springframework.org/schema/webflow-config http://www.springframework.org/schema/webflow-config/spring-webflow-config-2.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+		
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	
+		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"></property>
+		
+		<property name="prefix" value="/WEB-INF/jsp"></property>
+		
+		<property name="suffix" value=".jsp"></property>
+		
+	</bean>
+	
+	<bean id="viewFactoryCreator" class="org.springframework.webflow.mvc.builder.MvcViewFactoryCreator">
+   	 
+	   	 <property name="viewResolvers">
+	   	 
+	   	 	<list>
+	   	 
+	   	 	  <ref bean="viewResolver"></ref>
+	   	 
+	   	 	</list>
+	   	 
+	   	 </property>
+		
+		</bean>
+		
+		
+		<webflow-config:flow-builder-services id="flowBuilderServices" view-factory-creator="viewFactoryCreator"/>
+		
+		<webflow-config:flow-registry id="flowRegistry" flow-builder-services="flowBuilderServices">
+				
+				<webflow-config:flow-location path="WEB-INF/flow/flow.xml"></webflow-config:flow-location>		
+		
+		</webflow-config:flow-registry>
+		
+		<webflow-config:flow-executor id="flow-executor">
+		
+			<webflow-config:flow-execution-attributes>
+			
+				 <webflow-config:attribute name="flow-registry" value="flowRegistry"/>
+			
+			</webflow-config:flow-execution-attributes>
+		
+		</webflow-config:flow-executor>
+
+		<bean id="flowController" class="org.springframework.webflow.mvc.servlet.FlowController">
+		
+			<property name="flowExecutor" ref="flow-executor"></property>
+		
+		</bean>
+		
+		<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		
+			<property name="mappings" value="uno.htm=flowController">
+
+			</property>
+		</bean>
+		
+		
+	</beans>

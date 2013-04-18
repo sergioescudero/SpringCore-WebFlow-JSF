@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+
+
+
+
+
+<!-- INITIAL - FIN-->
+<context:annotation-config />
+
+<!-- JDBC - INICIO -->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+		<property name="url" value="jdbc:mysql://169.169.0.21:3306/curso"></property>
+		<property name="username" value="curso"></property>
+		<property name="password" value="curso"></property>
+	</bean>
+	
+	<bean id="plantilla" class="org.springframework.jdbc.core.JdbcTemplate" p:dataSource-ref="dataSource"></bean> 
+	
+	
+	<!-- <bean id="persona" class="domain.Persona" > <property name="plantilla" ref="plantilla"/> </bean>
+	 -->
+
+<!-- JDBC - FIN -->
+
+	
+	
+
+
+</beans>
