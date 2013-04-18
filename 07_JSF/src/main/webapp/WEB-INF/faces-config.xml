@@ -3,23 +3,10 @@
  xmlns:xi="http://www.w3.org/2001/XInclude"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
  
-<application>
-	<el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver</el-resolver>
-</application>
+	<application>
+		<el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver</el-resolver>
+	</application>
  
- 
- 	<managed-bean>
- 		<managed-bean-name>login</managed-bean-name>
-        <managed-bean-class>com.beans.Login</managed-bean-class>
-        <managed-bean-scope>session</managed-bean-scope>
-        <managed-property>
-            <property-name>usuario</property-name>
-            <property-class>java.lang.String</property-class>
-            <value>Introduce Usuario</value>
-        </managed-property>
- 	</managed-bean>
- 	
- 	
  	<managed-bean>
  		<managed-bean-name>persona</managed-bean-name>
  		<managed-bean-class>com.beans.Persona</managed-bean-class>
@@ -30,6 +17,14 @@
 			<value>#{plantilla}</value>
 		</managed-property>
  	</managed-bean>
+ 	
+ 	<navigation-rule>
+ 		<from-view-id>/persona.jsp</from-view-id>
+ 		<navigation-case>
+ 			<from-outcome>OK</from-outcome>
+ 			<to-view-id>/pages/coche.jsf</to-view-id>
+ 		</navigation-case>
+ 	</navigation-rule>
  	
  	
  	<managed-bean>
@@ -42,12 +37,12 @@
 		</managed-property>
  	</managed-bean>
  	
- 	
+ 	<!-- 
  	<validator>
  		<validator-id>loginvalidador</validator-id>
  		<validator-class>com.validadores.LoginValidator</validator-class>
  	</validator>
- 	
+ 	-->
  	
  	<navigation-rule>
  		<from-view-id>/login.jsp</from-view-id>

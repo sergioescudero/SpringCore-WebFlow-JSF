@@ -116,9 +116,9 @@ public class Persona {
 	
 	public String validar(){
 		
-		System.out.println("a validar");
+		System.out.println("a validar persona");
 		
-		return "ok";
+		return "OK";
 	}
 	
 	
