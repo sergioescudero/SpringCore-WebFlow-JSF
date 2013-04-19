@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/webflow
+        http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd" >
+
+
+    <!-- <on-start>
+    <evaluate expression="login.damePersona()" result="flowScope.persona"></evaluate>
+    </on-start>   
+
+	<view-state id="inicio" view="inicio" model="login">
+		<transition on="ok1" to="validarLogin"/>
+	</view-state>
+	
+	<view-state id="segundo" view="segundo">
+		<transition on="ok2" to="tercero"/>	
+	</view-state>
+
+	<view-state id="tercero" view="tercero">
+		<transition on="fin" to="fin"/>	
+	</view-state>
+	
+	<end-state id="fin" view="fin"/>  -->
+	
+	
+	
+	<on-start>
+    <evaluate expression="login.getPersona()" result="flowScope.persona"></evaluate>
+    <evaluate expression="login.getCoche()" result="flowScope.coche"></evaluate>
+    <evaluate expression="login.getMoto()" result="flowScope.moto"></evaluate>
+    <evaluate expression="login.getHogar()" result="flowScope.hogar"></evaluate>
+    </on-start>   
+	
+
+	
+	<view-state id="inicio" view="persona" model="persona">
+		<transition on="personaok" to="segundo"/>
+	</view-state>
+	
+	<view-state id="segundo" view="moto" model="moto">
+	
+		<transition on="motook" to="tercero"/>	
+	</view-state>
+
+
+     <view-state id="tercero" view="coche" model="coche">
+		<transition on="cocheok" to="cuarto"/>
+
+	</view-state>
+	
+	<view-state id="cuarto" view="hogar" model="hogar">
+	
+		<transition on="hogarok" to="fin"/>	
+	</view-state>
+	
+	<end-state id="fin" view="fin"/>
+	
+	
+	
+	
+  
+  <action-state id="validarLogin">
+  <evaluate expression="login.validar()"></evaluate>
+  <transition on="ok" to="ok"></transition>
+  <transition on="ko" to="ko"></transition>
+  </action-state>
+  <view-state id="ok" view="ok"></view-state>
+  <view-state id="ko" view="ko"></view-state>
+  
+  	<global-transitions>
+		  <transition on="motook" to="segundo"/>
+		   <transition on="personaok" to="inicio"/>
+		    <transition on="cocheok" to="tercero"/>
+		     <transition on="hogarok" to="cuarto"/>
+	</global-transitions>
+</flow>
