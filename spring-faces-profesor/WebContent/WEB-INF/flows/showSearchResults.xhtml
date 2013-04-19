@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:sf="http://www.springframework.org/tags/faces">
+    <body>
+
+        <ui:composition template="../template.xhtml">
+
+            <ui:define name="heading">
+                <h2>Search Results</h2>
+            </ui:define>
+
+            <ui:define name="body">
+
+            <h:dataTable id="allEmployees" var="employee" value="#{allEmployees}"  cellspacing="0" cellpadding="0" border="1">
+                <h:column>
+                    <f:facet name="header">Emp Id</f:facet>
+                    <h:outputText value="#{employee.id}" align="left" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Name</f:facet>
+                    <h:outputText value="#{employee.name}" align="left" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Date of Birth</f:facet>
+                    <h:outputText value="#{employee.dob}" align="left" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Designation</f:facet>
+                    <h:outputText value="#{employee.designation}" align="left" />
+                </h:column>
+            </h:dataTable>
+
+            <p align="left">
+                <a href="search">Search Again</a>
+            </p>
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

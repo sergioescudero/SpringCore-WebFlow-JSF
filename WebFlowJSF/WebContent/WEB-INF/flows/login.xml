@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/webflow
+        http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
+
+
+<!-- <var name="login" class="beans.login"/> -->
+
+<view-state id="login" model="login">
+<transition on="ok" to="verificausuario"/>
+</view-state>
+
+<view-state id="step2" >
+<transition on="previous" to="login"/>
+<transition on="next" to="confirmation"/>
+</view-state>
+
+
+
+<action-state id="verificausuario">
+  <evaluate expression="login.validar()"></evaluate>
+  <transition on="ok" to="ok"></transition>
+  <transition on="ko" to="ko"></transition>
+  </action-state>
+	
+<end-state id="confirmation" view="confirmation.xhtml"></end-state>
+
+</flow>

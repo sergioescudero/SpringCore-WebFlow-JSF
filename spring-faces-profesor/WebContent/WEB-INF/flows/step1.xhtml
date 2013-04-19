@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/core"
+    xmlns:h="http://java.sun.com/html"
+    xmlns:ui="http://java.sun.com/facelets">
+     
+<ui:composition template="/WEB-INF/flows/template.xhtml">
+ 
+    <ui:define name="title">Paso 1 del registro</ui:define>
+    <ui:define name="content">
+ 
+        <h:form>
+            <h:panelGrid columns="3" style="width:50%;">
+                <h:outputLabel for="nombre" value="#{msg['usuario.usuario']}" />
+                <h:inputText id="nombre" value="#{usuario.usuario}"
+                    required="true" />
+                <h:message for="nombre" />
+ 
+                <h:outputLabel for="apellidos" value="#{msg['usuario.clave']}" />
+                <h:inputText id="apellidos" value="#{usuario.clave}"
+                    required="true" />
+                <h:message for="apellidos" />
+ 
+            </h:panelGrid>
+ 
+            <h:commandButton value="#{msg['action.next']}"
+                action="#{flowRegistrationStep1.next}" />
+ 
+        </h:form>
+    </ui:define>
+</ui:composition>
+</html>
