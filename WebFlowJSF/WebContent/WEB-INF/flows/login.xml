@@ -10,6 +10,11 @@
 <view-state id="login" model="login">
 <transition on="ok" to="verificausuario"/>
 </view-state>
+<view-state id="ok" >
+</view-state>
+<view-state id="ko" >
+</view-state>
+
 
 <view-state id="step2" >
 <transition on="previous" to="login"/>
