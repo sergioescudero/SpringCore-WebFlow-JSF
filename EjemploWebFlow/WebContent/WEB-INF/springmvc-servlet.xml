@@ -57,4 +57,5 @@
     
     <bean id="login" class="com.beans.Login"></bean>  
 
+	<bean id="aPersona" class="com.beans.Persona"></bean>
 </beans>

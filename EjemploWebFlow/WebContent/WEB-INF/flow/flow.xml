@@ -9,9 +9,21 @@
 		<evaluate expression="login.getPersona()" result="flowScope.persona"></evaluate>
 	</on-start>
 	
+	
+	<view-state id="persona" view="persona" model="aPersona">
+		<transition on="coche" to="coche"></transition>
+	</view-state>
+	
+	
+	
+	
+	
+	
+	
 	<view-state id="uno" view="uno" model="login">
 		<transition on="ok1" to="validarLogin"></transition>
 	</view-state>
+	
 	<view-state id="dos" view="dos">
 		<transition on="ok2" to="tres"></transition>
 	</view-state>
