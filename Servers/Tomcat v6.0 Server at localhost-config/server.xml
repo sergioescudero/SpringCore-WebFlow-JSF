@@ -131,7 +131,7 @@
                prefix="localhost_access_log." suffix=".txt" pattern="common" resolveHosts="false"/>
         -->
 
-      <Context docBase="05_SpringMVC_Maven" path="/05_SpringMVC_Maven" reloadable="true" source="org.eclipse.jst.jee.server:05_SpringMVC_Maven"/><Context docBase="07_JSF" path="/07_JSF" reloadable="true" source="org.eclipse.jst.jee.server:07_JSF"/></Host>
+      <Context docBase="05_SpringMVC_Maven" path="/05_SpringMVC_Maven" reloadable="true" source="org.eclipse.jst.jee.server:05_SpringMVC_Maven"/><Context docBase="07_JSF" path="/07_JSF" reloadable="true" source="org.eclipse.jst.jee.server:07_JSF"/><Context docBase="WebFlowJSF" path="/WebFlowJSF" reloadable="true" source="org.eclipse.jst.j2ee.server:WebFlowJSF"/></Host>
     </Engine>
   </Service>
 </Server>
