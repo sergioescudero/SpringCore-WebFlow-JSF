@@ -21,27 +21,27 @@
    	<dependency>
    		<groupId>org.springframework</groupId>
    		<artifactId>spring-core</artifactId>
-   		<version>6.0.0</version>
+   		<version>6.1.0</version>
    	</dependency>
    	<dependency>
    		<groupId>org.springframework</groupId>
    		<artifactId>spring-beans</artifactId>
-   		<version>6.0.0</version>
+   		<version>6.1.0</version>
    	</dependency>
    	<dependency>
    		<groupId>org.springframework</groupId>
    		<artifactId>spring-context</artifactId>
-   		<version>6.0.0</version>
+   		<version>6.1.0</version>
    	</dependency>
    	<dependency>
    		<groupId>org.springframework</groupId>
    		<artifactId>spring-webmvc</artifactId>
-   		<version>6.0.0</version>
+   		<version>6.1.0</version>
    	</dependency>
    	<dependency>
    		<groupId>org.springframework.webflow</groupId>
    		<artifactId>spring-webflow</artifactId>
-   		<version>2.4.6.RELEASE</version>
+   		<version>2.5.1.RELEASE</version>
    	</dependency>
    	<dependency>
    		<groupId>com.sun.faces</groupId>
@@ -56,7 +56,7 @@
     	<dependency>
     		<groupId>org.springframework.webflow</groupId>
     		<artifactId>spring-faces</artifactId>
-    		<version>2.4.6.RELEASE</version>
+    		<version>2.5.1.RELEASE</version>
     	</dependency>
    	<dependency>
    		<groupId>jstl</groupId>
